@@ -1,0 +1,18 @@
+uav_mass: 2.5
+
+#- list of names of dynamically loaded controllers
+controllers : [
+  "Se3Controller",
+  "MpcController",
+  "FailsafeController",
+  "EmergencyController",
+  "PendulumController",
+]
+
+PendulumController:
+  address: "controller_module/ControllerModule"
+  namespace: "pendullum_controller"
+  eland_threshold: 0.0 # [m], position error triggering eland
+  failsafe_threshold: 0.0 # [m], position error triggering failsafe land
+  odometry_innovation_threshold: 0.0 # [m], position odometry innovation threshold
+  human_switchable: true
